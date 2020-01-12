@@ -1,7 +1,7 @@
 import Unsplash from 'unsplash-js';
 
 const unsplash = new Unsplash({ accessKey: process.env.REACT_APP_UNSPLASH_API_KEY });
-console.log(process.env.REACT_APP_UNSPLASH_API_KEY);
+
 export const requestSureImgResultFactory = unsplash => {
   let counter = 0;
   return async () => {
