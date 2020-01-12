@@ -10,7 +10,7 @@ This app makes use of the [Unsplash API](https://unsplash.com/developers) to get
 
 When you got your API key (the 'Access Key', NOT the 'Secret Key')
 - create a .env file in the root directory: `touch .env`
-- paste your API key after the 'REACT_APP_UNSPLASH_API_KEY=': `echo REACT_APP_UNSPLASH_API_KEY=YOUR_API_KEY >> ./.env`
+- paste your API key after the 'REACT_APP_UNSPLASH_API_KEY=' in the .env file: `echo REACT_APP_UNSPLASH_API_KEY=YOUR_API_KEY >> ./.env`
 
 Now you are ready to run the app locally for developement
 
