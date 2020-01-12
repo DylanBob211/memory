@@ -6,7 +6,7 @@ import Game from '../Game/Game';
 import LevelSelection from '../LevelSelection/LevelSelection';
 import SettingsMenu from '../SettingsMenu/SettingsMenu';
 import ErrorModal from '../Modals/ErrorModal/ErrorModal';
-import './App.css';
+import { GlobalStyle } from './AppElements';
 
 const App = () => {
   const {
@@ -79,7 +79,12 @@ const App = () => {
     );
   };
 
-  return appRender();
+  return (
+    <>
+      <GlobalStyle />
+      {appRender()}
+    </>
+  );
 };
 
 export default App;

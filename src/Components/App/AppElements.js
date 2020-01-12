@@ -1,5 +1,12 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import BackIcon from '../Icons/BackIcon';
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    font-family: 'Cute Font', cursive;
+  }
+`;
 
 export const GlobalButton = styled.button`
   cursor: pointer;
