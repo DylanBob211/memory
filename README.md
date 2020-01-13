@@ -5,6 +5,7 @@ Classic game for training your visual memory
 In order to install this app:
 
 - download the project: `git clone https://github.com/DylanBob211/memory.git`
+- navigate into the folder and install the dependencies: `npm install`
 
 This app makes use of the [Unsplash API](https://unsplash.com/developers) to get random images so you must first obtain your API key
 
