@@ -5,9 +5,10 @@ const unsplash = new Unsplash({ accessKey: process.env.REACT_APP_UNSPLASH_API_KE
 export const requestSureImgResultFactory = unsplash => {
   let counter = 0;
   return async () => {
-    const imgs = await unsplash.search.photos('dog');
+    const result = await unsplash.search.photos('dog');
+    const img = await result.json();
     counter++;
-    return imgs.results[counter];
+    return img.results[counter];
   };
 };
 
@@ -44,6 +45,7 @@ const requestImages = unsplash => async objectsToQuery => {
         if (!el.results[0]) {
           el = sureResults[sureResultsIndex];
           sureResultsIndex++;
+          return el;
         }
         return el.results[0];
       })
