@@ -129,7 +129,7 @@ const SettingsMenu = (
         name="timeToMemorize"
         value="5000"
         tag="5 Seconds"
-        checked={timeToMemorizeCards == 5}
+        checked={timeToMemorizeCards == 5000}
         onChange={event => setTimeToMemorizeCards(event.target.value)}
       />
       <SettingsRadioUnit
@@ -137,7 +137,7 @@ const SettingsMenu = (
         name="timeToMemorize"
         value="4000"
         tag="4 Seconds"
-        checked={timeToMemorizeCards == 4}
+        checked={timeToMemorizeCards == 4000}
         onChange={event => setTimeToMemorizeCards(event.target.value)}
       />
       <SettingsRadioUnit
@@ -145,7 +145,7 @@ const SettingsMenu = (
         name="timeToMemorize"
         value="3000"
         tag="3 Seconds"
-        checked={timeToMemorizeCards == 3}
+        checked={timeToMemorizeCards == 3000}
         onChange={event => setTimeToMemorizeCards(event.target.value)}
       />
       <SettingsRadioUnit
@@ -153,7 +153,7 @@ const SettingsMenu = (
         name="timeToMemorize"
         value="2000"
         tag="2 Seconds"
-        checked={timeToMemorizeCards == 2}
+        checked={timeToMemorizeCards == 2000}
         onChange={event => setTimeToMemorizeCards(event.target.value)}
       />
       <SettingsRadioUnit
@@ -161,7 +161,7 @@ const SettingsMenu = (
         name="timeToMemorize"
         value="1000"
         tag="1 Second"
-        checked={timeToMemorizeCards == 1}
+        checked={timeToMemorizeCards == 1000}
         onChange={event => setTimeToMemorizeCards(event.target.value)}
       />
     </SettingsRadioGroup>

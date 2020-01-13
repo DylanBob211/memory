@@ -57,7 +57,7 @@ export const SettingsRadioButton = styled.input.attrs(
 `;
 
 export const SettingsRadioUnit = ({
-  id, value, tag, checked, ...props
+  id, value, tag, ...props
 }) => (
   <>
     <SettingsRadioButton id={id} value={value} {...props} />

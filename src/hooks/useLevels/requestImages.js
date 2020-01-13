@@ -51,7 +51,8 @@ const requestImages = unsplash => async objectsToQuery => {
 
     return imgs;
   } catch (e) {
-    throw new Error('Something went wrong with the connection. Check your internet connection or again try later');
+    console.error(e.message);
+    throw new Error('Something went wrong... It might be because of your internet connection');
   }
 };
 
