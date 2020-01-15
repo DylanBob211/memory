@@ -5,14 +5,19 @@ const unsplash = new Unsplash({ accessKey: process.env.REACT_APP_UNSPLASH_API_KE
 export const requestSureImgResultFactory = unsplash => {
   let counter = 0;
   return async () => {
-    const result = await unsplash.search.photos('dog');
-    const img = await result.json();
-    counter++;
-    return img.results[counter];
+    try {
+      const result = await unsplash.search.photos('dog');
+      const img = await result.json();
+      counter++;
+      return img.results[counter];
+    } catch (e) {
+      console.error(e);
+      throw new Error('Unable to find any more dogs :(');
+    }
   };
 };
 
-const requestImages = unsplash => async objectsToQuery => {
+export const requestImagesFactory = unsplash => async objectsToQuery => {
   try {
     const promises = [];
     objectsToQuery.forEach(object => {
@@ -43,9 +48,9 @@ const requestImages = unsplash => async objectsToQuery => {
     const imgs = valuesToRead
       .map(el => {
         if (!el.results[0]) {
-          el = sureResults[sureResultsIndex];
+          const newElement = sureResults[sureResultsIndex];
           sureResultsIndex++;
-          return el;
+          return newElement;
         }
         return el.results[0];
       })
@@ -54,9 +59,10 @@ const requestImages = unsplash => async objectsToQuery => {
     return imgs;
   } catch (e) {
     console.error(e.message);
+    if (e.message === 'Unable to find any more dogs :(') throw new Error(e.message);
     throw new Error('Something went wrong... It might be because of your internet connection');
   }
 };
 
 
-export default requestImages(unsplash);
+export default requestImagesFactory(unsplash);
